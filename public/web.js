@@ -1,21 +1,21 @@
 $(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
+  $('.collapsible').collapsible();
+});
 
  //selecting the form by id
-  var fact = document.getElementById('generateFact');
+var fact = document.getElementById('generateQuote');
   //add event listener for the button click
-  fact.addEventListener('click', function(e) {
+fact.addEventListener('click', function(event) {
   //prevent reset
-      e.preventDefault();
+  event.preventDefault();
   //establish URL formula
-    var url="https://galvanize-cors-proxy.herokuapp.com/https://api.tronalddump.io/random/quote";
+  var url = "https://galvanize-cors-proxy.herokuapp.com/https://api.tronalddump.io/random/quote";
   //fetch the API and return json
   fetch(url)
   .then(function(response) {
     return response.json()
     .then(function(allData) {
-        var quoteTrump = allData.value;
+      var quoteTrump = allData.value;
     console.log(quoteTrump);
       alert(quoteTrump);
     });
