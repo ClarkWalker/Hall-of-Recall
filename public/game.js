@@ -52,7 +52,6 @@ function create() {
   jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
   placeSignKey = game.input.keyboard.addKey(Phaser.Keyboard.P);
 
-  jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
   cursors = game.input.keyboard.createCursorKeys();
 }
 
@@ -120,12 +119,12 @@ function update() {
     player.body.velocity.x = -150;
     player.animations.play('right');
   }
-/** /
+/**/
   if ((jumpButton.isDown || upKey.isDown || cursors.up.isDown) && player.body.onFloor() && game.time.now > jumpTimer) {
 /*/
   if (jumpButton.isDown || upKey.isDown || cursors.up.isDown) {
 /**/
     player.body.velocity.y = -325;
-    jumpTimer = game.time.now + 750;
+    jumpTimer = game.time.now + 250;
   }
 }
